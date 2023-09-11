@@ -1,0 +1,17 @@
+.AppFooter {
+    background-color: #282c34;
+    color: white;
+    font-family: 'KBO-Dia-Gothic_light';
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    flex-shrink: 0;
+    bottom: env(safe-area-inset-bottom);
+    height: 60px;
+    width: 100%;
+}
+
+.gitImg {
+    width: 22px;
+}

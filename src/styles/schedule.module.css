@@ -1,0 +1,64 @@
+.scheduleContainer {
+  padding: 5px 10px 20px 10px;
+}
+
+.scheduleTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.scheduleTable th {
+  border: 1px solid #ccc;
+  padding: 6px;
+  text-align: center;
+}
+
+.scheduleTable td {
+  border: 1px solid #ccc;
+  padding: 6px 2px;
+  text-align: center;
+}
+
+.dateCell {
+  font-size: 0.9rem;
+  background-color: #f2f2f2;
+}
+
+.timeCell {
+  font-size: 0.8rem;
+}
+
+/* 추가 */
+
+.matchCell {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 4px;
+  border-radius: 8px;
+}
+
+.team1Info {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 35%;
+}
+
+.team2Info {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 35%;
+}
+
+.score {
+  font-size: 1rem;
+  font-weight: medium;
+  color: #002460;
+  width: 30%;
+}
+
+.stadiumCell {
+  font-size: 0.8rem;
+}

@@ -1,0 +1,188 @@
+.customButton {
+  flex: 1;
+  height: 100px;
+  background-color: #3498db;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 1.5s ease;
+  text-align: center;
+  line-height: 100px;
+  /* To vertically center the text */
+  margin: 0 10px;
+  /* Adding some margin between buttons */
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+.customButton:hover {
+  background-color: #2872a3;
+  /* Change color when hover */
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+
+/* 썸네일의 스타일과 위치 조절 */
+.carousel .thumbs {
+  position: absolute;
+  bottom: 15%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.carousel .thumb {
+  width: 15px;
+  height: auto;
+  border-radius: 5px;
+  transition: border 0.3s;
+  border: 2px solid transparent;
+}
+
+.carousel .thumb.selected {
+  border: 2px solid white;
+}
+
+
+/* 뉴스, 경기일정 */
+
+.infoSection {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+}
+
+.infoHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 0px 0;
+  height: 40px;
+}
+
+.viewMore {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.viewMore:hover .more-icon {
+  transform: scale(1.1);
+}
+
+.newsItem {
+  display: flex;
+  text-align: left;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* 상단 정렬 */
+  gap: 15px;
+  padding: 20px 0;
+  min-height: 100;
+}
+
+.newsImage {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/*.news-item의 높이를 고정하거나 최소 높이를 설정합니다. .news-text에 flex: 1을 추가하여 높이를 늘립니다. 이렇게 하면, .news-text가 .news-item의 높이를 늘릴 수 있고, 그 결과 justify-content: space-between이 예상대로 작동할 것입니다.*/
+.newsText {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  height: 100px;
+  width: calc(100% - 100px);
+  /* 이미지와 마진을 제외한 너비 */
+  overflow: hidden;
+  /* 내용이 넘칠 경우 숨김 */
+}
+
+.newsText p {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  margin-bottom: auto;
+  /* 상단에 정렬 */
+}
+
+.newsText small {
+  margin: 0;
+  margin-top: auto;
+  /* 하단에 정렬 */
+}
+
+.matchItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.teamLogo {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+/* 구단 순위 */
+
+.infoHeaderRankings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 0;
+  height: 40px;
+}
+
+table {
+  display: table;
+  table-layout: auto;
+  width: 100%;
+  margin-top: 10px;
+  border-collapse: collapse;
+  border-color: gray;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  text-align: center;
+  padding: 3px;
+}
+
+th {
+  background-color: aliceblue;
+}
+
+.tdTeam {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.tdTeam img {
+  height: 24px;
+  width: 24px;
+}

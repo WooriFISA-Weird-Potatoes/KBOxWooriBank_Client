@@ -1,38 +1,72 @@
+/* 전역 box-sizing 설정 */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 스타일 초기화 (기본 스타일 제거) */
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+}
+
+/* 버튼을 클릭하거나 포커스했을 때 스타일 변경 */
+button:hover,
+button:focus,
+button:active {
+    text-decoration: none;
+    outline: invert;
+}
+
+/* 버튼을 눌렀을 때 잠시 표시되는 효과 제거 */
+button::-moz-focus-inner {
+    border: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: 'KBO-Dia-Gothic_medium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/KBO-Dia-Gothic_medium.woff') format('woff');
+    font-style: normal;
+}
+
+.Container {
+    height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
 .App {
-  text-align: center;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    text-align: center;
+    font-family: 'KBO-Dia-Gothic_medium';
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.AppAdmin {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: 'KBO-Dia-Gothic_medium';
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Main {
+    padding-top: 80px;
+    flex: 1;
 }

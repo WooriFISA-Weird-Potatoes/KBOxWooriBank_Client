@@ -1,0 +1,34 @@
+.titleTypography {
+    margin-bottom: 1.5em !important;
+    font-family: 'KBO-Dia-Gothic_bold' !important;
+    font-size: 1.6em !important;
+}
+
+.gameCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f4f4f4 !important;
+    padding: 20px 10px;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.game {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.club {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+.club button {
+    width: 100%;
+    height: 100%;
+}

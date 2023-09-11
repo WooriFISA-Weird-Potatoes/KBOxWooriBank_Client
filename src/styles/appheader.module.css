@@ -1,0 +1,44 @@
+.AppHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+.NavText {
+    display: flex;
+    align-items: center;
+}
+.NavLinks {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.NavLinks>* {
+    margin-left: 10px;
+}
+
+.LogoContainer {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.Logo {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    margin-left: 1px;
+    align-items: center;
+}
+
+.LogoImage {
+    max-width: 80px;
+    height: auto;
+}

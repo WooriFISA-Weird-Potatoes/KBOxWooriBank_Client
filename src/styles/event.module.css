@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'LAB디지털';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/LAB디지털.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html,
+body {
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    font-family: 'LAB디지털';
+    margin-top: 1.5em;
+}
+
+.clock {
+    color: black;
+    background-color: #ffedbd;
+    /* background-color: ivory; */
+    /* border: 2px solid #1fc07a; */
+    border-radius: 10px;
+    width: 18rem;
+    margin: 5px auto;
+}
