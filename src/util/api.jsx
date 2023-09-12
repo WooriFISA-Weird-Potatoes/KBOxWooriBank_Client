@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'https://92ae-115-139-6-232.ngrok-free.app/api',
+    baseURL: process.env.REACT_APP_API_URL,
     headers: {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
@@ -32,7 +32,7 @@ api.interceptors.response.use(
             console.log('refresh');
             try {
                 const refreshTokenResponse = await axios.post(
-                    'https://92ae-115-139-6-232.ngrok-free.app/api/auth/refresh',
+                    process.env.REACT_APP_API_URL,
                     {},
                     {
                         headers: {
