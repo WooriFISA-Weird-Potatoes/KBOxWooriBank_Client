@@ -5,6 +5,7 @@ const api = axios.create({
     headers: {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': 'true',
         'ngrok-skip-browser-warning': true,
         'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
     },
@@ -32,7 +33,7 @@ api.interceptors.response.use(
             console.log('refresh');
             try {
                 const refreshTokenResponse = await axios.post(
-                    process.env.REACT_APP_API_URL,
+                    process.env.REACT_APP_API_URL + '/auth/refresh',
                     {},
                     {
                         headers: {
