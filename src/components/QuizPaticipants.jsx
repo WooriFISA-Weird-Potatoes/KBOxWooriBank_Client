@@ -7,8 +7,18 @@ import useFetch from '../hooks/useFetch';
 
 export default function Chart() {
     const theme = useTheme();
-    const { data: weeklyQuizData, isLoading: isLoadingWeekly, error: errorWeekly, refetch: refetchWeeklyQuizData } = useFetch('/admin/quiz/weekly');
-    const { data: monthlyQuizData, isLoading: isLoadingMonthly, error: errorMonthly, refetch: refetchMonthlyQuizData } = useFetch('/admin/quiz/monthly');
+    const {
+        data: weeklyQuizData,
+        isLoading: isLoadingWeekly,
+        error: errorWeekly,
+        refetch: refetchWeeklyQuizData,
+    } = useFetch('/admin/quiz/weekly');
+    const {
+        data: monthlyQuizData,
+        isLoading: isLoadingMonthly,
+        error: errorMonthly,
+        refetch: refetchMonthlyQuizData,
+    } = useFetch('/admin/quiz/monthly');
 
     useEffect(() => {
         refetchWeeklyQuizData(); // 주간 데이터 다시 불러오기
@@ -23,15 +33,14 @@ export default function Chart() {
         return <div>Error: 데이터를 불러올 수 없습니다.</div>;
     }
 
+    const tooltipFormatter = (value, name) => [`${value}명`, '총 참여 회원수'];
 
     return (
         <React.Fragment>
             <Title>주간 퀴즈 참여자 수</Title>
-            <ResponsiveContainer>
+            <ResponsiveContainer width="100%" height="100%">
                 <LineChart
                     data={weeklyQuizData}
-                    width={500}
-                    height={300}
                     margin={{
                         top: 16,
                         right: 16,
@@ -69,15 +78,14 @@ export default function Chart() {
                         stroke="#8884d8"
                         dot={false}
                     />
+                    <Tooltip formatter={tooltipFormatter} />
                 </LineChart>
             </ResponsiveContainer>
 
             <Title>월간 퀴즈 참여자 수</Title>
-            <ResponsiveContainer>
+            <ResponsiveContainer width="100%" height="100%">
                 <LineChart
                     data={monthlyQuizData}
-                    width={500}
-                    height={300}
                     margin={{
                         top: 16,
                         right: 16,
@@ -106,7 +114,6 @@ export default function Chart() {
                         >
                             총 참여 회원수(명)
                         </Label>
-                        <Tooltip />
                     </YAxis>
                     <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
                     <Line
@@ -116,6 +123,7 @@ export default function Chart() {
                         stroke={theme.palette.primary.main}
                         dot={false}
                     />
+                    <Tooltip formatter={tooltipFormatter} />
                 </LineChart>
             </ResponsiveContainer>
         </React.Fragment>

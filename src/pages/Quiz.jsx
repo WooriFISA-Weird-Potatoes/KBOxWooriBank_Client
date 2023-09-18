@@ -25,7 +25,7 @@ export default function Quiz() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        setIsLoading('true');
+        setIsLoading(true);
         api.get('/quizzes')
             .then((response) => {
                 setQuiz(response.data.data);
@@ -38,8 +38,8 @@ export default function Quiz() {
     }, []);
 
     useEffect(() => {
-        setIsLoading('true');
         if (isLoggedIn) {
+            setIsLoading(true);
             api.get(`/quizzes/${quiz?.id}`)
                 .then((response) => {
                     setParticipation(response.data.data.hasParticipated);

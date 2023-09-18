@@ -17,7 +17,7 @@ const QuizFileUpload = () => {
         formData.append('file', file);
         console.log(formData);
         try {
-            const response = await fetch('https://92ae-115-139-6-232.ngrok-free.app/api/admin/upload/quiz', {
+            const response = await fetch( process.env.REACT_APP_API_URL + '/admin/upload/quiz', {
                 method: 'POST',
                 headers: {
                     'Access-Control-Allow-Origin': '*',

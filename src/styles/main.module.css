@@ -1,59 +1,33 @@
 .customButton {
   flex: 1;
   height: 100px;
+  line-height: 100px;
+  width: 100%;
+  margin: 10px 0;
   background-color: #3498db;
-  border: none;
   color: white;
   font-size: 20px;
   cursor: pointer;
   transition: background-color 1.5s ease;
   text-align: center;
-  line-height: 100px;
-  /* To vertically center the text */
-  margin: 0 10px;
-  /* Adding some margin between buttons */
-
-  /* Responsive */
-  @media (max-width: 768px) {
-    width: 100%;
-    margin: 10px 0;
-  }
 }
 
 .customButton:hover {
-  background-color: #2872a3;
-  /* Change color when hover */
+  background-color: #87c1e8;
 }
 
 .buttonContainer {
   display: flex;
   justify-content: space-between;
   margin: 0;
-}
-
-/* 썸네일의 스타일과 위치 조절 */
-.carousel .thumbs {
-  position: absolute;
-  bottom: 15%;
-  transform: translateX(-50%);
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-}
-
-.carousel .thumb {
-  width: 15px;
+  max-width: 100%;
+  width: auto;
   height: auto;
-  border-radius: 5px;
-  transition: border 0.3s;
-  border: 2px solid transparent;
 }
 
-.carousel .thumb.selected {
-  border: 2px solid white;
+.BannerContainer img {
+  width: 100%;
 }
-
 
 /* 뉴스, 경기일정 */
 

@@ -150,7 +150,7 @@ export default function Dashboard() {
                                 onClick={handelBackToMain}
                                 sx={{ cursor: 'pointer' }}
                             >
-                                서비스 메인으로 이동
+                                메인으로 이동
                             </Typography>
                             <IconButton color="inherit" onClick={handelBackToMain}>
                                 <HomeIcon />

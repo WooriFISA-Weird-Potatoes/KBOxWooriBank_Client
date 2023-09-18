@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useTheme } from '@mui/material/styles';
-import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer, CartesianGrid } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer, CartesianGrid, Tooltip } from 'recharts';
 import Title from './Title';
 import Loading from './Loading';
 import useFetch from '../hooks/useFetch';
@@ -23,15 +23,14 @@ export default function Chart() {
         return <div>Error: 데이터를 불러올 수 없습니다.</div>;
     }
 
+    const tooltipFormatter = (value, name) => [`${value}명`, '총 참여 회원수'];
 
     return (
         <React.Fragment>
             <Title>주간 승부예측 참여자 수</Title>
-            <ResponsiveContainer>
+            <ResponsiveContainer width="100%" height="100%">
                 <LineChart
                     data={weeklyPredictionData}
-                    width={500}
-                    height={300}
                     margin={{
                         top: 16,
                         right: 16,
@@ -69,15 +68,14 @@ export default function Chart() {
                         stroke="#8884d8"
                         dot={false}
                     />
+                    <Tooltip formatter={tooltipFormatter} />
                 </LineChart>
             </ResponsiveContainer>
 
             <Title>월간 승부예측 참여자 수</Title>
-            <ResponsiveContainer>
+            <ResponsiveContainer width="100%" height="100%">
                 <LineChart
                     data={monthlyPredictionData}
-                    width={500}
-                    height={300}
                     margin={{
                         top: 16,
                         right: 16,
@@ -115,6 +113,7 @@ export default function Chart() {
                         stroke={theme.palette.primary.main}
                         dot={false}
                     />
+                    <Tooltip formatter={tooltipFormatter} />
                 </LineChart>
             </ResponsiveContainer>
         </React.Fragment>

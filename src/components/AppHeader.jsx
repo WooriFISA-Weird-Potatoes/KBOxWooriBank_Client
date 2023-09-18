@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useUser } from '../contexts/UserContext';
-import Logo from '../assets/favicon.png';
+import Logo from '../assets/Logo.png';
 import styles from '../styles/appheader.module.css';
 import api from '../util/api';
 

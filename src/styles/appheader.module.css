@@ -31,14 +31,14 @@
 }
 
 .Logo {
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     display: flex;
-    margin-left: 1px;
+    margin-left: 10px;
     align-items: center;
 }
 
 .LogoImage {
-    max-width: 80px;
+    max-width: 55px;
     height: auto;
 }

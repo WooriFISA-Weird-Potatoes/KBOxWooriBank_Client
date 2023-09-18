@@ -62,7 +62,7 @@ export default function Winner() {
                             <Box>
                                 <Typography component="h1" variant="h5" sx={{ mb: 2, fontFamily: 'KBO-Dia-Gothic_medium', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                                     축하합니다!
-                                    <img src='https://blog.kakaocdn.net/dn/byuzXG/btrulTxSVDi/ad3chlzkY1KXHKmpON4Kb0/img.png' alt='' style={{ width: '50%' }} />
+                                    <img src='https://i.namu.wiki/i/htR-v43a2DWjspok-7OnX-7kToISqVOWSxj_WFfrH_7X5MtdEopFHNEfVknGXIA8zj8h5P-Aj1R64HZ0yvNjbMt3D4WMXdDbVfUjFlq7sSwnyVaQ2Rxigdx1lOVEbfottOplF7IZLKL9dAdvsHs-Bw.webp' alt='' style={{ width: '50%' }} />
                                 </Typography>
                                 <Typography my={5} sx={{ ml: 2, textAlign: 'left' }}>
                                     아래 주소가 맞나요? <br />

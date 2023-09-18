@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useTheme } from '@mui/material/styles';
-import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer, CartesianGrid } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer, CartesianGrid, Tooltip } from 'recharts';
 import Title from './Title';
 import Loading from './Loading';
 import useFetch from '../hooks/useFetch';
@@ -27,11 +27,9 @@ export default function Chart() {
     return (
         <React.Fragment>
             <Title>주간 회원 수</Title>
-            <ResponsiveContainer>
+            <ResponsiveContainer width="100%" height="100%">
                 <LineChart
-                    data={weeklyData}
-                    width={500}
-                    height={300}
+                    data={weeklyData} // 포인트를 포함한 데이터로 변경
                     margin={{
                         top: 16,
                         right: 16,
@@ -69,15 +67,26 @@ export default function Chart() {
                         stroke="#8884d8"
                         dot={false}
                     />
+                    <Line // 포인트 라인 추가
+                        isAnimationActive={true}
+                        type="monotone"
+                        dataKey="points"
+                        stroke="#82ca9d"
+                        dot={false}
+                    />
+                    <Tooltip
+                        labelStyle={{ color: 'black' }} // X 축 레이블 텍스트 스타일
+                        itemStyle={{ color: 'black' }} // 각 데이터 포인트의 스타일
+                        formatter={(totalUsers, name) => [`${totalUsers}명`, '총 회원수']} // 포맷 함수
+                        labelFormatter={(createdAt) => `일자: ${createdAt}`} // X 축 레이블 포맷 함수
+                    />
                 </LineChart>
             </ResponsiveContainer>
 
             <Title>월간 회원 수</Title>
-            <ResponsiveContainer>
+            <ResponsiveContainer width="100%" height="100%">
                 <LineChart
                     data={monthlyData}
-                    width={500}
-                    height={300}
                     margin={{
                         top: 16,
                         right: 16,
@@ -112,8 +121,21 @@ export default function Chart() {
                         isAnimationActive={true}
                         type="monotone"
                         dataKey="totalUsers"
-                        stroke={theme.palette.primary.main}
+                        stroke="#8884d8"
                         dot={false}
+                    />
+                    <Line
+                        isAnimationActive={true}
+                        type="monotone"
+                        dataKey="points"
+                        stroke="#82ca9d"
+                        dot={false}
+                    />
+                    <Tooltip
+                        labelStyle={{ color: 'black' }} // X 축 레이블 텍스트 스타일
+                        itemStyle={{ color: 'black' }} // 각 데이터 포인트의 스타일
+                        formatter={(totalUsers, name) => [`${totalUsers}명`, '총 회원수']} // 포맷 함수
+                        labelFormatter={(createdAt) => `일자: ${createdAt}`} // X 축 레이블 포맷 함수
                     />
                 </LineChart>
             </ResponsiveContainer>
